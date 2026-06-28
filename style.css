@@ -82,6 +82,7 @@ body {
   width: 100%;
 }
 
+/* ===== NAVBAR PHONE BUTTON (CLICK-TO-CALL) ===== */
 .btn-outline {
   border: 2px solid #d97706;
   background: transparent;
@@ -90,15 +91,38 @@ body {
   font-weight: 600;
   color: #d97706;
   transition: 0.3s;
-  cursor: default;
   font-size: 0.9rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
 }
 .btn-outline i {
-  margin-right: 8px;
+  margin-right: 0;
 }
 .btn-outline:hover {
   background: #d97706;
   color: white;
+  transform: scale(1.02);
+  box-shadow: 0 4px 16px rgba(217, 119, 6, 0.3);
+}
+
+/* ===== CONTACT PHONE LINK ===== */
+.contact-phone-link {
+  color: #0b2a4a;
+  text-decoration: none;
+  transition: 0.3s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.contact-phone-link:hover {
+  color: #d97706;
+  transform: scale(1.02);
+}
+.contact-phone-link i {
+  color: #d97706;
 }
 
 /* ===== HERO ===== */
@@ -634,6 +658,23 @@ body {
   border-top: 1px solid #e2e8f0;
 }
 
+/* Contact phone link in contact info */
+.contact-phone-link {
+  color: #0b2a4a;
+  text-decoration: none;
+  transition: 0.3s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.contact-phone-link:hover {
+  color: #d97706;
+  transform: scale(1.02);
+}
+.contact-phone-link i {
+  color: #d97706;
+}
+
 .contact-form {
   flex: 2 1 400px;
   background: white;
@@ -767,5 +808,9 @@ hr {
   }
   .cta-banner h3, .gallery-cta h3 {
     font-size: 1.5rem;
+  }
+  .btn-outline {
+    width: 100%;
+    justify-content: center;
   }
 }
