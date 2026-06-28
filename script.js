@@ -61,6 +61,30 @@
     });
   }
 
+  // Handle hero buttons
+  const heroBtns = document.querySelectorAll('.btn-primary, .btn-secondary');
+  heroBtns.forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      const page = this.dataset.page;
+      if (page) {
+        showPage(page);
+      }
+    });
+  });
+
+  // Handle CTA banner button
+  const ctaBtn = document.querySelector('.cta-btn');
+  if (ctaBtn) {
+    ctaBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      const page = this.dataset.page;
+      if (page) {
+        showPage(page);
+      }
+    });
+  }
+
   // ============================================
   // CONTACT FORM HANDLING
   // ============================================
@@ -81,33 +105,6 @@
       // Show success message
       alert('✅ Thank you! Our team will get back to you within 24 hours.');
       this.reset();
-    });
-  }
-
-  // ============================================
-  // SPONSOR CAROUSEL - Pause on interaction
-  // ============================================
-  const sponsorTrack = document.getElementById('sponsorTrack');
-  const carouselWrapper = document.querySelector('.sponsor-carousel-wrapper');
-  
-  if (sponsorTrack && carouselWrapper) {
-    // Pause animation when user hovers over any sponsor item
-    const sponsorItems = document.querySelectorAll('.sponsor-item');
-    sponsorItems.forEach(item => {
-      item.addEventListener('mouseenter', () => {
-        sponsorTrack.style.animationPlayState = 'paused';
-      });
-      item.addEventListener('mouseleave', () => {
-        sponsorTrack.style.animationPlayState = 'running';
-      });
-    });
-
-    // Pause when carousel wrapper is hovered
-    carouselWrapper.addEventListener('mouseenter', () => {
-      sponsorTrack.style.animationPlayState = 'paused';
-    });
-    carouselWrapper.addEventListener('mouseleave', () => {
-      sponsorTrack.style.animationPlayState = 'running';
     });
   }
 
@@ -133,7 +130,6 @@
   console.log('⚡ Taura Solar & Electrical Services Ltd');
   console.log('🔧 Powering Kenya with reliable energy solutions.');
   console.log('📞 Call us: +254 700 123 456');
-  console.log('🏢 Trusted partners carousel loaded successfully!');
   console.log('📸 Gallery page with videos and photos added!');
 
 })();
